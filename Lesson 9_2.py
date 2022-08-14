@@ -12,15 +12,21 @@ class __Leaner:
 
     def get_average_mark(self):
         '''Возвращает среднеарифметическое значение оценок'''
-        return sum(self.marks) / (len(self.marks)) if self.marks != [] else print('Список оценок пуст!')
+        if self.marks:
+            return sum(self.marks) / len(self.marks)
+        else:
+            print('Список оценок пуст!')
+            return None
 
     def get_scolarship(self):
         '''Возвращает размер степендии'''
-        if self.get_average_mark():
-            if self.get_average_mark() >= 5:
-                return self.higher_value
-            else:
-                return self.lower_value
+        average_mark = self.get_average_mark()
+        if None:
+            return None
+        elif average_mark >= 5:
+            return self.higher_value
+        else:
+            return self.lower_value
 
     def add_mark(self, mark):
         '''Добавляет оценку в список оценок, если выполняется условие'''
