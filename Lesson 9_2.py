@@ -21,16 +21,16 @@ class __Leaner:
     def get_scolarship(self):
         '''Возвращает размер степендии'''
         average_mark = self.get_average_mark()
-        if None:
-            return None
-        elif average_mark >= 5:
+        if average_mark >= 5:
             return self.higher_value
-        else:
+        elif average_mark < 5:
             return self.lower_value
+        else:
+            return None
 
     def add_mark(self, mark):
         '''Добавляет оценку в список оценок, если выполняется условие'''
-        if type(mark) == int and 0 < mark < 11:
+        if type(mark) == int and 0 < mark <= 10:
             self.marks.append(mark)
             print('Оценка добавлена в список')
         else:
